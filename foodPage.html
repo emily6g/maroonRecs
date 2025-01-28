@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter Food Places</title>
+  <script src="foodoffcampus.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(to right, rgb(255, 233, 233), pink, rgb(255, 233, 233));
+      font-family: "Space Grotesk", serif;
+
+
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #420303;
+      border-radius: 12px;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      gap: 20px;
+      color: white;
+    }
+
+    .search-input {
+      width: 300px;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-family: "Space Grotesk", serif;
+    }
+
+    .search-input:focus {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .search-button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: maroon;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out, transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-family: "Space Grotesk", serif;
+    }
+
+    .search-button:hover {
+      background-color: white;
+      color: maroon;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #output {
+      margin-top: 120px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .info-box {
+      background: #562424;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      padding: 25px;
+      width: 320px;
+      text-align: left;
+      margin: 20px;
+      font-family: "Space Grotesk", sans-serif;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-10px);
+      /* Slight lift on hover */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .info-box h3 {
+      font-size: 22px;
+      padding: 10px;
+      margin-bottom: 15px;
+      margin-top: 0;
+      border-radius: 10px;
+      color: white;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    .info-box p {
+      margin: 5px 0;
+      color: rgb(188, 188, 188);
+
+    }
+
+    #header {
+      background-color: #420303;
+      padding: 15px;
+      width: 100.8%;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="header">
+    <button onclick="history.back()">&#9664;</button>
+
+  </div>
+
+  <div class="search-container">
+    <label for="locationDropdown">Filter by Cuisine:</label>
+    <select id="cuisineDropdown" class="search-input">
+      <option value=""> All </option>
+      <option value="Fast Food">Fast Food</option>
+      <option value="Mexican">Mexican</option>
+      <option value="Mexican Fusion">Mexican Fusion</option>
+      <option value="Bar & Grill">Bar & Grill</option>
+      <option value="Bakery & Cafe">Bakery & Cafe</option>
+      <option value="Cajun">Cajun</option>
+      <option value="Burgers">Burgers</option>
+      <option value="Brewery & American">Brewery & American</option>
+      <option value="Italian">Italian</option>
+      <option value="French">French</option>
+      <option value="Barbecue">Barbecue</option>
+      <option value="Indian">Indian</option>
+      <option value="Korean">Korean</option>
+      <option value="Breakfast & Brunch">Breakfast & Brunch</option>
+      <option value="Pizza">Pizza</option>
+    </select>
+
+    <label for="statusDropdown">Filter by Status:</label>
+        <select id="statusDropdown" class="search-input">
+            <option value="All">All</option>
+            <option value="Open">Open</option>
+            <option value="Closed">Closed</option>
+        </select>
+        
+    <button id="searchButton" class="search-button">Search</button>
+  </div>
+
+  <div id="output"></div>
+</body>
+
+</html>

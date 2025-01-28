@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="studyspots.js" defer></script>
+
+    <title>Study Spots</title>
+
+    <style>
+        body {
+            background-image: url("Images/dormPic.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            color: white;
+        }
+
+        .info-box {
+            background: #562424;
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            width: 320px;
+            text-align: left;
+            margin: 20px;
+            font-family: 'Courier New, Courier, monospace';
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-box h3 {
+            font-size: 22px;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-top: 0;
+            border-radius: 10px;
+            color: white;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .info-box p {
+            margin: 5px 0;
+            color: rgb(188, 188, 188);
+
+        }
+
+
+        .open {
+            font-weight: bold;
+            color: green;
+        }
+
+        .closed {
+            font-weight: bold;
+            color: red;
+        }
+
+        #output {
+            margin-top: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            justify-content: center;
+            padding: 20px;
+            background: #420303;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-input {
+            width: 300px;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-family: "Space Grotesk", serif;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: maroon;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-family: "Space Grotesk", serif;
+        }
+
+        .search-button:hover {
+            transform: scale(1.05);
+            background-color: white;
+            color: maroon;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        #header {
+            background-color: #420303;
+            padding: 15px;
+            width: 100.8%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <button onclick="history.back()">&#9664;</button>
+
+        <div class="search-container">
+
+            <label for="locationDropdown">Filter by Location:</label>
+            <select id="locationDropdown" class="search-input">
+                <option value="All">All</option>
+                <option value="Central Campus">Central Campus</option>
+                <option value="South Campus">South Campus</option>
+                <option value="West Campus">West Campus</option>
+                <option value="North Campus">North Campus</option>
+                <option value="Off Campus">Off Campus</option>
+            </select>
+
+            <label for="statusDropdown">Filter by Status:</label>
+            <select id="statusDropdown" class="search-input">
+                <option value="All">All</option>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+            </select>
+
+            <button id="filterButton" class="search-button">Search</button>
+        </div>
+    </div>
+
+        <div id="output">
+        </div>
+</body>
+
+</html>
